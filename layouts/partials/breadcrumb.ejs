@@ -2,12 +2,16 @@
   <!-- <li class="breadcrumb-item">
     <a class="content-link" href="/">Home </a> ⇾
   </li> -->
-<% parentLinks.forEach((link) => { %>
+  <% parentLinks.forEach((link) => { %>
   <li class="breadcrumb-item">
-    ⇾ <a class="content-link" href="<%- link.url %>" ><%= link.name %> </a>
+    <span class="spacer">/</span>
+    <span
+      ><a class="content-link" href="<%- link.url %>"><%= link.name %></a></span
+    >
   </li>
-<% }) %>
+  <% }) %>
   <li class="breadcrumb-item">
-    ⇾ <%= title %>
+    <span class="spacer">/</span>
+    <span><%= title %></span>
   </li>
 </ul>

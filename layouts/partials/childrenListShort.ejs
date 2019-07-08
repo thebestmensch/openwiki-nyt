@@ -1,0 +1,37 @@
+<div class="children-container">
+  <% if (locals.kicker) { %>
+    <h3>
+    <% if (locals.link) { %><a href="<%= link %>"><% } %>
+    <%= kicker %>
+    <% if (locals.link) { %></a><% } %>
+    </h3>
+  <% } %>
+  <ul class="children">
+    <% children.slice(0,3).forEach((link) => { %>
+      <% const type = link.resourceType %>
+      <li class="type-<%= type %>">
+        <%
+        const iconMap = {
+          document: 'file-o',
+          spreadsheet: 'table',
+          'text/html': 'file-o',
+          folder: 'folder',
+          presentation: 'clone',
+          image: 'picture-o',
+          video: 'video-camera',
+          pdf: 'file-pdf-o'
+        }
+        const iconName = iconMap[type] || 'external-link'
+        const className = `fa-${iconName}`
+        %>
+        <i class="fa foldericon <%= className %>" aria-hidden="true"></i>
+        <a class="content-link" href="<%- link.url %>" ><%= link.name %></a>
+      </li>
+    <% }) %>
+  </ul>
+  <p>
+    <% if (locals.link) { %><a class='view-all' href="<%= link %>"><% } %>
+    Explore all
+    <% if (locals.link) { %></a><% } %>
+  </p>
+</div>

@@ -11,7 +11,7 @@
     <div id="category-page" class="g-body">
       <div class="g-main-content">
       <% all.forEach((category) => { %>
-        <%- include('../partials/childrenList', {kicker: category.prettyName, children: category.children, link: category.path}) %>
+        <%- include('../partials/childrenListShort', {kicker: category.prettyName, children: category.children, link: category.path}) %>
       <% }) %>
       </div>
       <%- include('../partials/footer', { pageType: 'category_index' }) %>

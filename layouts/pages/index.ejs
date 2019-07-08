@@ -5,29 +5,28 @@
 
     <header id="masthead" class="masthead" role="banner">
       <div class="container">
+        <%- include ../partials/branding %>
         <%- include ../partials/userTools %>
       </div>
     </header>
 
     <div id="main-search-page">
       <div class="main-item">
-        <%- include('../partials/branding', {context: 'home'}) %>
-        <div class="tagline">
-          <p><%- template('landing.tagline') %> <%- template('landing.quickLink') %></p>
-        </div>
-        <%- include('../partials/search', {style: 'homepage', focus: 'autofocus', msgOnFocus: template('search.placeholder')}) %>
-
-        <div class="featured-cat">
-          <div class="teams-cat-container">
-            <h3>Find by Team</h3>
-            <ul class="teams-cat-list">
-              <% teams.slice(0, 6).forEach((team) => { %>
-                <li data-team-id="<%= team.id %>"><a class="button btn-cat" href="<%= team.path %>"><%= team.prettyName %></a></li>
-              <% }) %>
-            </ul>
+        <div class='hero section'>
+          <%- include('../partials/branding', {context: 'home'}) %>
+          <div class="tagline">
+            <p><a href='https://open-austin.org'>Open Austin's</a> official knowledge base.</p>
           </div>
+        </div>
+        
+        <div class='search-container section'>
+          <%- include('../partials/search', {style: 'homepage', focus: 'autofocus', msgOnFocus: template('search.placeholder')}) %>
+        </div>
+        
+        <div class="featured-cat section">
           <div class="featured-cat-container">
-            <h3>Useful Docs</h3>
+            <h3>Not sure where to start?</h3>
+            <p>Select a popular doc below or <a  href="/categories"><%- template('landing.viewAll') %></a></p>
             <ul class="featured-cat-list">
               <% featured.forEach((doc) => { %>
                 <% const type = doc.resourceType %>
@@ -50,7 +49,7 @@
                   <a href="<%= doc.path %>"><%= doc.prettyName %></a>
                 </li>
               <% }) %>
-              <li><a class="button btn-homepage" href="/categories"><%- template('landing.viewAll') %></a></li>
+
             </ul>
           </div>
         </div>

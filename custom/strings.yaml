@@ -1,0 +1,17 @@
+branding:
+  name: Open Library
+  prettyName: Open Library
+  org: Open Austin
+  icon: /assets/images/icon.png
+  favicon: /assets/images/icon.png
+
+footer:
+  defaultEmail: info@open-austin.org
+  buttons:
+    edit: Edit This Page
+    move: Move This Page
+    create: Create New Page
+    viewFolder: View Folder
+
+search:
+  placeholder: Search docs...
